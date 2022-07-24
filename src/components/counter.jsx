@@ -1,11 +1,24 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class Counter extends Component {
-    render() { 
-        React.createElement
-        return <h1>Hello World</h1>;
-    }
-}
- 
-export default Counter;
+    state = {
+        count: 0,
+     };
 
+  render() {
+    return (
+      <React.Fragment>
+        <span>{this.formatCount()}</span>
+        <button>Increase</button>
+      </React.Fragment>
+    );
+  }
+
+formatCount(){
+    const { count } = this.state;
+    return count === 0 ? 'Zero' : count;
+}
+
+}
+
+export default Counter;
